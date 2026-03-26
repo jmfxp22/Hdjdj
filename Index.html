@@ -53,7 +53,6 @@
         }
         input:focus, textarea:focus { border-color: var(--primary); outline: none; background: #1e1b4b; }
 
-        /* GERADOR ESTILIZADO NO FINAL */
         .gen-section {
             background: rgba(139, 92, 246, 0.1); border: 2px dashed var(--primary);
             padding: 25px; border-radius: 15px; text-align: center; margin: 30px 0;
@@ -90,7 +89,7 @@
             <h2 class="section-title">Registro de Cidadão</h2>
             
             <div class="input-group">
-                <label>Seu Nome no Discord:</label>
+                <label>Confirme seu Usuário do Discord:</label>
                 <input type="text" id="iptDiscord" required placeholder="ex: marquinhos_rp">
             </div>
 
@@ -127,12 +126,22 @@
     const WEBHOOK = "https://discord.com/api/webhooks/1486442698318680144/Xi_uYKki0-2UohYtLj0ggiAFFuS5JBwVaFEe6HAhBREXXQlVKbjg7CSdy-rX_ChvB2_l";
 
     const perguntas = [
-        "O que é MetaGaming (MG)?", "O que é PowerGaming (PG)?", "Defina RDM e VDM:", 
-        "O que é Combat Logging?", "Explique o que é amor a vida:", "Conceito de IC e OOC:",
-        "O que é Safe Zone?", "Defina Revenge Kill:", "Como agir em abordagem policial?",
-        "Qual é a sua idade? (RP)", "O que é Forçar RP?", 
-        "Cite 5 regras do Discord:", "O que fazer ao ver um Hacker?",
-        "Cite 5 regras importantes para o game:", "Por que merece entrar no Factual RJ?"
+        "Qual o seu nome completo no Discord?",
+        "O que é MetaGaming (MG)?", 
+        "O que é PowerGaming (PG)?", 
+        "Defina RDM e VDM:", 
+        "O que é Combat Logging?", 
+        "Explique o que é amor a vida:", 
+        "Conceito de IC e OOC:",
+        "O que é Safe Zone?", 
+        "Defina Revenge Kill:", 
+        "Como agir em abordagem policial?",
+        "Qual é a sua idade? (RP)", 
+        "O que é Forçar RP?", 
+        "Cite 5 regras do Discord:", 
+        "O que fazer ao ver um Hacker?",
+        "Cite 5 regras importantes para o game:", 
+        "Por que merece entrar no Factual RJ?"
     ];
 
     const container = document.getElementById('perguntasHTML');
@@ -141,10 +150,9 @@
     });
 
     function gerarIDUnico() {
-        // Lógica de ID matemático baseado no tempo para evitar duplicatas
-        const timePart = Date.now().toString().slice(-3); // Pega os últimos 3 milissegundos
-        const randomPart = Math.floor(Math.random() * 900) + 100; // 3 números aleatórios
-        const finalID = (parseInt(timePart + randomPart) % 4999) + 1; // Garante que fique entre 1 e 5000
+        const timePart = Date.now().toString().slice(-3);
+        const randomPart = Math.floor(Math.random() * 900) + 100;
+        const finalID = (parseInt(timePart + randomPart) % 4999) + 1;
 
         document.getElementById('idShow').innerText = finalID;
         document.getElementById('iptID').value = finalID;
